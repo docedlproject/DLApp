@@ -26,11 +26,11 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Instalar Dependências e Sincronizar Capacitor
+            - name: Instalar Dependências e Sincronizar Capacitor
         run: |
-          npm ci || npm install
+          npm install @capacitor/core @capacitor/cli @capacitor/android
           npx cap sync android
-
+          
       - name: Dar permissão ao Gradle
         run: chmod +x android/gradlew
 
